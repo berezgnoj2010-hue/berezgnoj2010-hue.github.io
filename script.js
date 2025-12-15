@@ -1,5 +1,7 @@
-const button = document.getElementById("btn");
+const buttons = document.querySelectorAll('.product-card button');
 
-button.addEventListener("click", () => {
-  alert("Ты только что нажал кнопку 😎");
+buttons.forEach(button => {
+  button.addEventListener('click', () => {
+    alert('Товар додано до кошика!');
+  });
 });
