@@ -29,6 +29,7 @@ header nav a {
   margin-left: 15px;
   text-decoration: none;
   color: #333;
+  transition: color 0.2s;
 }
 
 header nav a:hover {
@@ -44,6 +45,7 @@ main {
 h1 {
   margin-bottom: 20px;
   color: #ff6600;
+  text-align: center;
 }
 
 .product-grid {
@@ -88,6 +90,7 @@ h1 {
   padding: 10px 15px;
   border-radius: 4px;
   cursor: pointer;
+  transition: background-color 0.2s;
 }
 
 .product-card button:hover {
