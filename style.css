@@ -6,104 +6,72 @@
 }
 
 body {
-  background: #f4f4f4;
+  background: #f3f3f3;
   color: #333;
 }
 
 header {
-  background: white;
-  padding: 15px 25px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  background: #fff;
+  padding: 20px;
+  text-align: center;
   border-bottom: 1px solid #ddd;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #ff6600;
-}
-
-nav a {
-  margin-left: 15px;
-  text-decoration: none;
-  color: #333;
-}
-
-nav a:hover {
-  color: #ff6600;
-}
-
 main {
-  max-width: 1200px;
-  margin: 30px auto;
+  max-width: 1000px;
+  margin: 40px auto;
   padding: 0 20px;
 }
 
-h1 {
-  text-align: center;
-  margin-bottom: 30px;
-  color: #ff6600;
-}
-
-.product-grid {
+.grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
-.product-card {
-  background: white;
+.card {
+  background: #fff;
   border-radius: 10px;
-  padding: 15px;
+  padding: 30px 20px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.product-card:hover {
+.card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 
-.product-card img {
-  width: 100%;
-  height: 160px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.product-card h2 {
-  margin: 10px 0;
-  font-size: 18px;
+.card h2 {
+  margin-bottom: 15px;
 }
 
 .price {
+  font-size: 20px;
   font-weight: bold;
   color: #ff6600;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 button {
   background: #ff6600;
   color: white;
   border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
+  padding: 10px 25px;
+  border-radius: 6px;
   cursor: pointer;
   transition: 0.3s;
 }
 
 button:hover {
   background: #e65c00;
-  box-shadow: 0 0 10px rgba(255,102,0,0.6);
+  box-shadow: 0 0 12px rgba(255,102,0,0.6);
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  margin-top: 40px;
-  background: white;
+  background: #fff;
   border-top: 1px solid #ddd;
 }

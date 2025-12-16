@@ -1,5 +1,5 @@
-document.querySelectorAll('button').forEach(button => {
-  button.addEventListener('click', () => {
+document.querySelectorAll('button').forEach(btn => {
+  btn.addEventListener('click', () => {
     alert('Товар додано!');
   });
 });
