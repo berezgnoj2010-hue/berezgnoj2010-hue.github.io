@@ -1,139 +1,132 @@
-* {
-  box-sizing: border-box;
+body {
   margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(#0b3d2e, #0f5c45);
+  color: #fff;
 }
 
-body {
-  background-color: #f4f5f7;
-  color: #333;
+/* 🎄 Гирлянда */
+.garland {
+  height: 30px;
+  background: repeating-linear-gradient(
+    90deg,
+    red 0 20px,
+    yellow 20px 40px,
+    green 40px 60px,
+    blue 60px 80px
+  );
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from { opacity: 0.7; }
+  to { opacity: 1; }
 }
 
 header {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-header .logo {
-  font-weight: bold;
-  font-size: 1.7em;
-  color: #ff6600;
-}
-
-header nav a {
-  margin-left: 20px;
-  text-decoration: none;
-  color: #555;
-  font-weight: 500;
-  transition: color 0.3s, transform 0.3s;
-}
-
-header nav a:hover {
-  color: #ff6600;
-  transform: scale(1.1);
-}
-
-main {
-  max-width: 1200px;
-  margin: 30px auto;
-  padding: 0 20px;
-}
-
-h1 {
-  margin-bottom: 30px;
-  color: #ff6600;
+  padding: 20px;
   text-align: center;
-  font-size: 2em;
 }
 
-.product-grid {
+.cart-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-.product-card {
-  background-color: #fff;
+.card {
+  background: #fff;
+  color: #000;
   border-radius: 12px;
   overflow: hidden;
-  padding-bottom: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  box-shadow: 0 0 15px rgba(255,255,255,0.3);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.product-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 25px gold;
 }
 
-.img-container {
+.card img {
   width: 100%;
-  height: 180px;
-  overflow: hidden;
-}
-
-.img-container img {
-  width: 100%;
-  height: 100%;
+  height: 160px;
   object-fit: cover;
-  transition: transform 0.3s;
 }
 
-.product-card:hover .img-container img {
-  transform: scale(1.1);
-}
-
-.product-card h2 {
-  margin: 15px 0 10px;
-  font-size: 1.3em;
-  color: #333;
+.card h3 {
   text-align: center;
 }
 
-.product-card .price {
-  color: #ff6600;
+.price {
+  text-align: center;
   font-weight: bold;
-  text-align: center;
-  margin-bottom: 12px;
-  font-size: 1.1em;
 }
 
-.product-card button {
+.buy-btn {
   display: block;
-  width: 80%;
-  margin: 0 auto;
-  background-color: #ff6600;
-  color: #fff;
+  margin: 10px auto 15px;
+  padding: 10px 20px;
+  background: crimson;
+  color: white;
   border: none;
-  padding: 12px 0;
   border-radius: 6px;
   cursor: pointer;
-  font-weight: 600;
-  font-size: 1em;
-  transition: all 0.3s;
 }
 
-.product-card button:hover {
-  background-color: #e55b00;
-  box-shadow: 0 4px 15px rgba(255, 102, 0, 0.5);
-  transform: scale(1.05);
+.buy-btn:hover {
+  box-shadow: 0 0 15px crimson;
 }
 
-footer {
+/* 🪟 Модалка */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background: white;
+  color: black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 300px;
   text-align: center;
-  padding: 20px 0;
-  background-color: #fff;
-  border-top: 1px solid #ddd;
-  margin-top: 50px;
-  font-size: 0.95em;
-  color: #555;
+}
+
+.qty {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.qty button {
+  padding: 5px 10px;
+}
+
+.cart {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 300px;
+  height: 100%;
+  background: white;
+  color: black;
+  padding: 15px;
+  overflow-y: auto;
 }
