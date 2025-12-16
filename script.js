@@ -5,21 +5,21 @@ const cartBtn = document.getElementById('cartBtn');
 const cart = document.getElementById('cart');
 const cartItems = document.getElementById('cartItems');
 
-let currentProduct = {};
+let currentProduct = null;
 let cartData = [];
 
 document.querySelectorAll('.buy-btn').forEach(btn => {
-  btn.onclick = () => {
+  btn.addEventListener('click', () => {
     const card = btn.closest('.card');
     currentProduct = {
       name: card.dataset.name,
-      price: card.dataset.price,
-      img: card.querySelector('img').src
+      img: card.querySelector('img').src,
+      qty: 1
     };
     modalTitle.textContent = currentProduct.name;
     quantityInput.value = 1;
     modal.classList.remove('hidden');
-  };
+  });
 });
 
 document.getElementById('closeModal').onclick = () => {
@@ -27,18 +27,18 @@ document.getElementById('closeModal').onclick = () => {
 };
 
 document.getElementById('plus').onclick = () => {
-  quantityInput.value++;
+  quantityInput.value = Number(quantityInput.value) + 1;
 };
 
 document.getElementById('minus').onclick = () => {
-  if (quantityInput.value > 1) quantityInput.value--;
+  if (Number(quantityInput.value) > 1) {
+    quantityInput.value = Number(quantityInput.value) - 1;
+  }
 };
 
 document.getElementById('addToCart').onclick = () => {
-  cartData.push({
-    ...currentProduct,
-    qty: quantityInput.value
-  });
+  currentProduct.qty = Number(quantityInput.value);
+  cartData.push(currentProduct);
   modal.classList.add('hidden');
   cartBtn.classList.remove('hidden');
 };
@@ -48,9 +48,10 @@ cartBtn.onclick = () => {
   cartData.forEach(item => {
     cartItems.innerHTML += `
       <div>
-        <img src="${item.img}" width="50">
+        <img src="${item.img}" width="50"><br>
         <b>${item.name}</b><br>
-        К-сть: ${item.qty} | Ціна: 0 грн
+        Кількість: ${item.qty}<br>
+        Ціна: 0 грн
         <hr>
       </div>
     `;
